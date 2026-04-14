@@ -39,21 +39,21 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 flex items-center justify-center px-4 py-10">
       <div className="relative max-w-md w-full">
-        <div className="absolute -top-8 left-6 h-28 w-28 rounded-full bg-blue-100 opacity-70 blur-2xl"></div>
-        <div className="absolute -bottom-8 right-6 h-28 w-28 rounded-full bg-indigo-100 opacity-70 blur-2xl"></div>
-        <div className="relative rounded-[2rem] border border-slate-200 bg-white/95 p-8 shadow-2xl shadow-slate-200 backdrop-blur-xl">
+        <div className="absolute -top-8 left-6 h-28 w-28 rounded-full bg-slate-200 opacity-70 blur-2xl"></div>
+        <div className="absolute -bottom-8 right-6 h-28 w-28 rounded-full bg-blue-100 opacity-70 blur-2xl"></div>
+        <div className="relative rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200">
           <div className="text-center mb-8">
             <Link href="/" className="inline-block text-slate-600 hover:text-slate-900 text-sm">
               ← Back
             </Link>
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-xl text-white shadow-lg">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-xl text-white shadow-md">
               🔐
             </div>
-            <h2 className="text-3xl font-bold text-slate-900">
+            <h2 className="text-3xl font-semibold text-slate-900">
               {isSignUp ? 'Create Account' : 'Sign In'}
             </h2>
             <p className="text-slate-500 text-sm mt-2">
-              {isSignUp ? 'Create a new account to start.' : 'Enter your credentials to continue.'}
+              {isSignUp ? 'Securely create a new account.' : 'Sign in to access your dashboard.'}
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function AuthPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
                 required
                 disabled={loading}
               />
@@ -84,7 +84,7 @@ export default function AuthPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
                 required
                 disabled={loading}
               />
@@ -93,7 +93,7 @@ export default function AuthPage() {
             <button
               type="submit"
               disabled={loading || !email || !password}
-              className="w-full rounded-2xl bg-black py-3 text-sm font-semibold text-white transition hover:bg-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full rounded-2xl bg-slate-900 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Processing...' : (isSignUp ? 'Sign Up' : 'Sign In')}
             </button>
