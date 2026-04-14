@@ -15,9 +15,6 @@ export default function LandingPage() {
           <h1 className="text-6xl font-semibold tracking-tight text-white mb-4">
             Welcome
           </h1>
-          <p className="mx-auto max-w-xl text-base text-slate-300 leading-8 mb-10">
-            Modern, centered, and polished — this landing page gives a premium first impression while staying clean and easy to use.
-          </p>
           <Link href="/auth">
             <button className="inline-flex w-full justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">
               Get Started
