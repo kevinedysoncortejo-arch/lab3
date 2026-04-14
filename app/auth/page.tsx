@@ -37,29 +37,29 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-slate-950 text-slate-50 flex items-center justify-center px-4 py-10">
       <div className="relative max-w-md w-full">
-        <div className="absolute -top-8 left-6 h-28 w-28 rounded-full bg-slate-200 opacity-70 blur-2xl"></div>
-        <div className="absolute -bottom-8 right-6 h-28 w-28 rounded-full bg-blue-100 opacity-70 blur-2xl"></div>
-        <div className="relative rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200">
+        <div className="absolute -top-10 left-10 h-28 w-28 rounded-full bg-white/10 blur-3xl"></div>
+        <div className="absolute -bottom-10 right-10 h-28 w-28 rounded-full bg-sky-500/10 blur-3xl"></div>
+        <div className="relative rounded-[2rem] border border-white/10 bg-slate-900/95 p-8 shadow-[0_25px_80px_-40px_rgba(15,23,42,0.9)] backdrop-blur-xl">
           <div className="text-center mb-8">
-            <Link href="/" className="inline-block text-slate-600 hover:text-slate-900 text-sm">
+            <Link href="/" className="inline-block text-slate-400 hover:text-white text-sm">
               ← Back
             </Link>
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-xl text-white shadow-md">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-400 text-xl text-white shadow-lg shadow-sky-400/20">
               🔐
             </div>
-            <h2 className="text-3xl font-semibold text-slate-900">
+            <h2 className="text-3xl font-semibold text-white">
               {isSignUp ? 'Create Account' : 'Sign In'}
             </h2>
-            <p className="text-slate-500 text-sm mt-2">
-              {isSignUp ? 'Securely create a new account.' : 'Sign in to access your dashboard.'}
+            <p className="text-slate-400 text-sm mt-2">
+              {isSignUp ? 'Create your account and access the portal.' : 'Sign in to securely access your dashboard.'}
             </p>
           </div>
 
           {message && (
             <div className={`mb-4 rounded-xl px-4 py-3 text-sm font-medium ${
-              message.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'
+              message.type === 'success' ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-700' : 'bg-rose-950/80 text-rose-300 border border-rose-700'
             }`}>
               {message.text}
             </div>
@@ -72,7 +72,7 @@ export default function AuthPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 required
                 disabled={loading}
               />
@@ -84,7 +84,7 @@ export default function AuthPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 required
                 disabled={loading}
               />
@@ -93,7 +93,7 @@ export default function AuthPage() {
             <button
               type="submit"
               disabled={loading || !email || !password}
-              className="w-full rounded-2xl bg-slate-900 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full rounded-2xl bg-sky-400 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Processing...' : (isSignUp ? 'Sign Up' : 'Sign In')}
             </button>
@@ -102,7 +102,7 @@ export default function AuthPage() {
           <div className="mt-6 text-center">
             <button
               onClick={() => setIsSignUp(!isSignUp)}
-              className="text-slate-600 hover:text-slate-900 text-sm"
+              className="text-slate-400 hover:text-white text-sm"
             >
               {isSignUp ? 'Already have an account? Sign In' : 'Need an account? Sign Up'}
             </button>

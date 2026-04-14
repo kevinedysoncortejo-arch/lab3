@@ -4,23 +4,22 @@ import Link from 'next/link'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 flex items-center justify-center px-4 py-10">
-      <div className="relative max-w-md w-full">
-        <div className="absolute -top-10 -left-8 h-24 w-24 rounded-full bg-slate-200 opacity-70 blur-2xl"></div>
-        <div className="absolute -bottom-10 right-10 h-28 w-28 rounded-full bg-blue-100 opacity-60 blur-2xl"></div>
-        <div className="relative rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200 text-center">
-          <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-2xl text-white shadow-md">
-            ✓
+    <div className="min-h-screen bg-slate-950 text-slate-50 flex items-center justify-center px-4 py-10">
+      <div className="relative max-w-lg w-full">
+        <div className="absolute -top-10 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
+        <div className="relative rounded-[2rem] border border-white/10 bg-slate-900/95 p-10 shadow-[0_25px_80px_-40px_rgba(15,23,42,0.8)] backdrop-blur-xl text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-sky-400 to-indigo-500 text-3xl shadow-xl shadow-sky-500/20">
+            ✨
           </div>
-          <h1 className="text-4xl font-semibold text-slate-900 mb-4">
-            Formal Portal Experience
+          <h1 className="text-5xl font-semibold tracking-tight text-white mb-4">
+            Welcome
           </h1>
-          <p className="text-slate-600 mb-8 leading-7">
-            Secure access and a polished entry point for your app. Centered, simple, and ready to use.
+          <p className="mx-auto max-w-md text-sm text-slate-300 leading-7 mb-10">
+            A minimalist entry point with modern polish. Click get started to go to login.
           </p>
           <Link href="/auth">
-            <button className="w-full rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
-              Go to Login
+            <button className="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">
+              Get Started
             </button>
           </Link>
         </div>
