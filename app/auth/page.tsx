@@ -37,19 +37,19 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-4">
-      <div className="max-w-md w-full">
-        <div className="text-center mb-8">
-          <Link href="/" className="text-gray-600 hover:text-gray-800">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 py-10">
+      <div className="max-w-md w-full rounded-3xl border border-gray-200 bg-white p-8">
+        <div className="text-center mb-6">
+          <Link href="/" className="text-gray-600 hover:text-gray-900 text-sm">
             ← Back
           </Link>
-          <h2 className="text-2xl font-bold text-gray-900 mt-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mt-4">
             {isSignUp ? 'Create Account' : 'Sign In'}
           </h2>
         </div>
 
         {message && (
-          <div className={`mb-4 p-3 rounded-lg text-sm ${
+          <div className={`mb-4 rounded-lg px-4 py-3 text-sm ${
             message.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
           }`}>
             {message.text}
@@ -57,34 +57,30 @@ export default function AuthPage() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-              required
-              disabled={loading}
-            />
-          </div>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black"
+            required
+            disabled={loading}
+          />
 
-          <div>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-              required
-              disabled={loading}
-            />
-          </div>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black"
+            required
+            disabled={loading}
+          />
 
           <button
             type="submit"
             disabled={loading || !email || !password}
-            className="w-full bg-black text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-800 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-xl bg-black py-3 text-sm font-semibold text-white transition hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? 'Processing...' : (isSignUp ? 'Sign Up' : 'Sign In')}
           </button>
@@ -93,7 +89,7 @@ export default function AuthPage() {
         <div className="mt-6 text-center">
           <button
             onClick={() => setIsSignUp(!isSignUp)}
-            className="text-gray-600 hover:text-gray-800 text-sm"
+            className="text-gray-600 hover:text-gray-900 text-sm"
           >
             {isSignUp ? 'Already have an account? Sign In' : 'Need an account? Sign Up'}
           </button>
